@@ -23,12 +23,11 @@ TicTacTools tic = new TicTacTools();
 //create while loop that iterates while there is no winner or number of turns is 9
 
 
+tic.printBoard(gameBoard);
 
 while (gameWon != false || plays < 9)
 {
-    //call print board method
-    tic.printBoard(gameBoard);
-    
+   
     string player = "";
 
     //Ask each player in turn for their choice
@@ -46,6 +45,9 @@ while (gameWon != false || plays < 9)
 
         //update the game board array
         tic.updateGameBoard(gameBoard, spot, turn);
+
+    //call print board method
+    tic.printBoard(gameBoard);
 
     //Check for winner method
 
