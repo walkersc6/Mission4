@@ -10,7 +10,7 @@ public class TicTacTools
             return gameBoard;
         }
         
-        if (gameBoard[spot - 1] != "")
+        if (gameBoard[spot - 1] != spot.ToString())
         {
             Console.WriteLine("Spot already taken. Choose a different one");
             return gameBoard;
