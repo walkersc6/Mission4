@@ -1,5 +1,6 @@
-﻿using System;
-using System.Runtime.InteropServices;
+﻿//using System;
+//using System.Runtime.InteropServices;
+using tictactoe;
 
 // • Welcome the user to the game
 Console.WriteLine("Welcome to TicTacToe!");
@@ -14,33 +15,33 @@ string[] gameBoard =
 };
 
 bool gameWon = false;
-//int plays = 0;
+int plays = 0;
 bool turn = true;
+
+TicTacTools tic = new TicTacTools();
 
 //create while loop that iterates while there is no winner or number of turns is 9
 while (gameWon != false || plays < 9)
 {
-
-    // player1
-
-    //player2
-
-    plays = plays + 2;
-
+    string player = "";
 
     //Ask each player in turn for their choice
-    if (turn =  true)
+    if (turn == true)
     {
-        string player = "Player 1";
+        player = "Player 1";
     }
     else
     {
-        string player = "Player 2";
+        player = "Player 2";
     }
+
+    Console.WriteLine(player + ": please enter a number between 1-9");
+    int spot = Console.Read();
+    //validate answer and check that it is an open spot
 
     //update the game board array
 
-    updateGameBoard(gameBoard, spot, turn);
+    tic.UpdateGameBoard(gameBoard, spot, turn);
 
     //call print board method
 
@@ -54,6 +55,7 @@ while (gameWon != false || plays < 9)
     {
         turn = true;
     }
+    plays++;
 }
 
 
