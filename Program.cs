@@ -26,10 +26,8 @@ TicTacTools tic = new TicTacTools();
 
 while (gameWon != false || plays < 9)
 {
-    bool valid = false;
     //call print board method
-
-
+    
     string player = "";
 
     //Ask each player in turn for their choice
@@ -46,7 +44,7 @@ while (gameWon != false || plays < 9)
         int spot = int.Parse(Console.ReadLine());
 
         //update the game board array
-        tic.updateGameBoard(gameBoard, spot, turn, valid);
+        tic.updateGameBoard(gameBoard, spot, turn);
 
     //Check for winner method
 
