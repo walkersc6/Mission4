@@ -46,7 +46,7 @@ while (gameWon != false || plays < 9)
 
     //update the game board array
 
-    tic.UpdateGameBoard(gameBoard, spot, turn);
+    tic.updateGameBoard(gameBoard, spot, turn);
 
     //call print board method
 
