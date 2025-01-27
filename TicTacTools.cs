@@ -2,7 +2,7 @@ namespace tictactoe;
 
 public class TicTacTools
 {
-    public string[] UpdateGameBoard(string[] gameBoard, int spot, bool turn)
+    public string[] updateGameBoard(string[] gameBoard, int spot, bool turn)
     {
         if (spot < 1 || spot > gameBoard.Length)
         {
