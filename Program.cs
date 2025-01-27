@@ -22,8 +22,14 @@ TicTacTools tic = new TicTacTools();
 
 //create while loop that iterates while there is no winner or number of turns is 9
 
+
+
 while (gameWon != false || plays < 9)
 {
+    bool valid = false;
+    //call print board method
+
+
     string player = "";
 
     //Ask each player in turn for their choice
@@ -36,18 +42,15 @@ while (gameWon != false || plays < 9)
         player = "Player 2";
     }
 
-    Console.WriteLine(player + ": please enter a number between 1-9");
-    int spot = int.Parse(Console.ReadLine());
-    //validate answer and check that it is an open spot
+        Console.WriteLine(player + ": please enter a number between 1-9");
+        int spot = int.Parse(Console.ReadLine());
 
-    //update the game board array
-
-    tic.updateGameBoard(gameBoard, spot, turn);
-
-    //call print board method
-
+        //update the game board array
+        tic.updateGameBoard(gameBoard, spot, turn, valid);
 
     //Check for winner method
+
+    //change which player's turn it is
     if (turn == true)
     { 
         turn = false;
@@ -56,6 +59,8 @@ while (gameWon != false || plays < 9)
     {
         turn = true;
     }
+
+    //increase number of plays
     plays++;
 }
 
