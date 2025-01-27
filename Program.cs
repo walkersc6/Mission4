@@ -18,6 +18,11 @@ bool gameWon = false;
 bool turn = true;
 
 //create while loop that iterates while there is no winner or number of turns is 9
+
+Console.WriteLine($"\nPlayer {currentPlayer}, enter a number (1-9) to place your mark:");
+string input = Console.ReadLine();
+
+
 while (gameWon != false || plays < 9)
 {
 
@@ -26,7 +31,7 @@ while (gameWon != false || plays < 9)
     //player2
 
     plays = plays + 2;
-
+    
 
     //Ask each player in turn for their choice
     if (turn =  true)
