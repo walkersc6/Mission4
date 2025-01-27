@@ -23,8 +23,8 @@ public class TicTacTools
 
     public void printBoard(string[] gameBoard)
     {
-        Console.WriteLine(gameBoard[0], gameBoard[1], gameBoard[2]);
-        Console.WriteLine(gameBoard[3], gameBoard[4], gameBoard[5]);
-        Console.WriteLine(gameBoard[6], gameBoard[7], gameBoard[8]);
+        Console.WriteLine(gameBoard[0] + " | " + gameBoard[1] + " | " + gameBoard[2]);
+        Console.WriteLine(gameBoard[3] + " | " + gameBoard[4] + " | " + gameBoard[5]);
+        Console.WriteLine(gameBoard[6] + " | " + gameBoard[7] + " | " + gameBoard[8]);
     }
 }
