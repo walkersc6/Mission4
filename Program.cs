@@ -2,11 +2,11 @@
 //using System.Runtime.InteropServices;
 using tictactoe;
 
-// • Welcome the user to the game
+//Welcome the user to the game
 Console.WriteLine("Welcome to TicTacToe!");
 
 
-// • Create a game board array to store the players’ choices
+//Create a game board array to store the players’ choices
 string[] gameBoard =
 {
     "1", "2", "3",
@@ -27,6 +27,7 @@ TicTacTools tic = new TicTacTools();
 while (gameWon != false || plays < 9)
 {
     //call print board method
+    tic.printBoard(gameBoard);
     
     string player = "";
 
@@ -62,6 +63,10 @@ while (gameWon != false || plays < 9)
     plays++;
 }
 
+
+//Console.Write(gameBoard[0], gameBoard[1], gameBoard[2])
+//Console.Write(gameBoard[3], gameBoard[4], gameBoard[5])
+//Console.Write(gameBoard[6], gameBoard[7], gameBoard[8])
 
 
 
