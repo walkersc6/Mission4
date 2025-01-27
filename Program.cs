@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 
 // • Welcome the user to the game
 Console.WriteLine("Welcome to TicTacToe!");
@@ -13,30 +14,38 @@ string[] gameBoard =
 };
 
 bool gameWon = false;
-int plays = 0;
+//int plays = 0;
+bool turn = true;
 
 //create while loop that iterates while there is no winner or number of turns is 9
 while (gameWon != false || plays < 9)
 {
-
-    // player1
-
-    //player2
-
-    plays = plays + 2;
-
-
     //Ask each player in turn for their choice
-
+    if (turn =  true)
+    {
+        string player = "Player 1";
+    }
+    else
+    {
+        string player = "Player 2";
+    }
 
     //update the game board array
 
+    updateGameBoard(gameBoard, spot, turn);
 
     //call print board method
 
 
     //Check for winner method
-
+    if (turn == true)
+    { 
+        turn = false;
+    }
+    else
+    {
+        turn = true;
+    }
 }
 
 
