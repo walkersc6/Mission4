@@ -37,7 +37,7 @@ while (gameWon != false || plays < 9)
     }
 
     Console.WriteLine(player + ": please enter a number between 1-9");
-    int spot = Console.Read();
+    int spot = int.Parse(Console.ReadLine());
     //validate answer and check that it is an open spot
 
     //update the game board array
