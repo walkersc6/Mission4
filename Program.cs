@@ -1,9 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
 
-hi :)
-khbkj
-  
-    //add hehe
+
+class TicTac
+{
     
-    kjbjkmjb
+}
