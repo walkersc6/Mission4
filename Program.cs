@@ -25,11 +25,7 @@ while (!gameWon && plays < 9)
     string player = turn ? "Player 1" : "Player 2";
     Console.WriteLine($"{player}: please enter a number between 1-9");
 
-    int spot;
-    while (!int.TryParse(Console.ReadLine(), out spot) || spot < 1 || spot > 9)
-    {
-        Console.WriteLine("Invalid input. Please enter a number between 1 and 9.");
-    }
+    int spot = int.Parse(Console.ReadLine());
 
     //Update the game board
     tic.updateGameBoard(gameBoard, spot, turn);
