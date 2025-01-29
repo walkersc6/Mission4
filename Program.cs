@@ -39,7 +39,7 @@ while (!gameWon && plays < 9)
     if (gameWon)
     {
         Console.WriteLine($"{player} wins!");
-        break;
+        //break;
     }
 
     //Switch turn
@@ -54,3 +54,7 @@ if (!gameWon)
 {
     Console.WriteLine("It's a tie!");
 }
+
+//make sure user sees who won and that the program doesn't end before the user wants it to
+Console.WriteLine("Thank you for playing! Press enter to exit");
+Console.ReadLine();
