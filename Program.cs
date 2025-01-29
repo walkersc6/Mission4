@@ -10,6 +10,7 @@ char[,] gameBoard = {
     { '7', '8', '9' }
 };
 
+//keeps track to see if the game has been won
 bool gameWon = false;
 int plays = 0;
 bool turn = true;
@@ -39,7 +40,6 @@ while (!gameWon && plays < 9)
     if (gameWon)
     {
         Console.WriteLine($"{player} wins!");
-        //break;
     }
 
     //Switch turn
