@@ -3,13 +3,12 @@
 //Welcome the user to the game
 Console.WriteLine("Welcome to TicTacToe!");
 
-
 //Create a game board array to store the players’ choices
-static char[,] gameBoard = {
-                            { '1', '2', '3' },
-                            { '4', '5', '6' },
-                            { '7', '8', '9' } 
-                            };
+char[,] gameBoard = {
+    { '1', '2', '3' },
+    { '4', '5', '6' },
+    { '7', '8', '9' }
+};
 
 bool gameWon = false;
 int plays = 0;
@@ -17,47 +16,45 @@ bool turn = true;
 
 TicTacTools tic = new TicTacTools();
 
-//print out board so the user can see it before making a selection
+//Print the initial board
 tic.printBoard(gameBoard);
 
-//create while loop that iterates while there is no winner or number of turns is 9
-while (gameWon != false || plays < 9)
+//Loop while there is no winner and less than 9 plays
+while (!gameWon && plays < 9)
 {
-   
-    string player = "";
+    string player = turn ? "Player 1" : "Player 2";
+    Console.WriteLine($"{player}: please enter a number between 1-9");
 
-    //Ask each player in turn for their choice
-    if (turn == true)
+    int spot;
+    while (!int.TryParse(Console.ReadLine(), out spot) || spot < 1 || spot > 9)
     {
-        player = "Player 1";
-    }
-    else
-    {
-        player = "Player 2";
+        Console.WriteLine("Invalid input. Please enter a number between 1 and 9.");
     }
 
-        //get user input
-        Console.WriteLine(player + ": please enter a number between 1-9");
-        int spot = int.Parse(Console.ReadLine());
+    //Update the game board
+    tic.updateGameBoard(gameBoard, spot, turn);
 
-        //update the game board array
-        tic.updateGameBoard(gameBoard, spot, turn);
-
-    //call print board method
+    //Print updated board
     tic.printBoard(gameBoard);
 
-    //Check for winner method
+    //Check for winner
+    gameWon = tic.checkWinner(gameBoard);
 
-    //change which player's turn it is
-    if (turn == true)
-    { 
-        turn = false;
-    }
-    else
+    if (gameWon)
     {
-        turn = true;
+        Console.WriteLine($"{player} wins!");
+        break;
     }
 
-    //increase number of plays
+    //Switch turn
+    turn = !turn;
+
+    //Increase number of plays
     plays++;
+}
+
+//Game Over Message
+if (!gameWon)
+{
+    Console.WriteLine("It's a tie!");
 }
